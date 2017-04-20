@@ -1,16 +1,22 @@
 package quicksort;
 public class Quicksort {
+	private Pivotsuche pivotsuche = new PivotRandom();
+	int pivot;
 
 
-	int[] quicksort(int a[],int ilinks, int irechts) {
-		int pivot, i, j;
+	public void sortieren(int a[], int ilinks, int irechts){
+		pivot = pivotsuche.getPivot(a);
+		quicksort(a, ilinks, irechts);
+		
+	};
+	
+	public int[] quicksort(int a[],int ilinks, int irechts) {
+		int  i, j;
 		if (irechts > ilinks) {
 			
 			i = ilinks;
 			j = irechts - 1;
-			
-			
-			pivot = a[irechts];
+
 
 			while (true) {
 				while (a[i] < pivot)
@@ -32,7 +38,7 @@ public class Quicksort {
 		return a;
 	}
 
-	void swap(int a[],int swap1, int swap2){
+	private void swap(int a[],int swap1, int swap2){
 		int temp = a[swap1];
 		a[swap1] = a[swap2];
 		a[swap2] = temp;

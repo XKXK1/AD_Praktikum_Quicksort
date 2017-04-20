@@ -4,8 +4,6 @@ public class PivotRandom implements Pivotsuche{
 
 	@Override
 	public int getPivot(int[] array) {
-		// TODO Auto-generated method stub
-		return 0;
+		return array[(int) ((Math.random()*array.length))];
 	}
-
 }
