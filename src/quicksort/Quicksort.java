@@ -39,6 +39,7 @@ public class Quicksort {
 				swap(a, i, j);
 				i++;
 				j--;
+				counter+=2;
 			}
 		}
 
